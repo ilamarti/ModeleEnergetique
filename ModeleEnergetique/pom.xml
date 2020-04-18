@@ -16,6 +16,7 @@
 		<module>ModeleEnergetique-web</module>
 		<module>ModeleEnergetique-service</module>
 		<module>ModeleEnergetique-batch</module>
+        <module>ModeleEnergetique-frontend</module>
 	</modules>
 
 	<parent>
