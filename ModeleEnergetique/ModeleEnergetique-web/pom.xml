@@ -23,7 +23,7 @@
   	</dependency>
 	<dependency>
   		<groupId>ma.negpm</groupId>
-  		<artifactId>ModeleEnergetique-front</artifactId>
+  		<artifactId>ModeleEnergetique-frontend</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
   	</dependency>
 	 
