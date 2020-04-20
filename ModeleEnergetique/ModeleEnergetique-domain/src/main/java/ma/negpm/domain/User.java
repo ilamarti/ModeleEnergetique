@@ -10,7 +10,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name = "Me_User", //
 		uniqueConstraints = { //
-				@UniqueConstraint(name = "ME_USER_UK", columnNames = "User_Name") })
+				@UniqueConstraint(name = "ME_USER_UK", columnNames = "userName") })
 public class User {
 
 	@Id
@@ -18,7 +18,7 @@ public class User {
 	@Column(name = "User_Id", nullable = false)
 	private Long userId;
 
-	@Column(name = "User_Name", length = 36, nullable = false)
+	@Column(length = 36, nullable = false)
 	private String userName;
 
 	@Column(name = "Encryted_Password", length = 128, nullable = false)

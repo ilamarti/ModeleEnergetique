@@ -21,6 +21,11 @@
   		<artifactId>ModeleEnergetique-service</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+  		<groupId>ma.negpm</groupId>
+  		<artifactId>ModeleEnergetique-persistence</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
 	<dependency>
   		<groupId>ma.negpm</groupId>
   		<artifactId>ModeleEnergetique-frontend</artifactId>
