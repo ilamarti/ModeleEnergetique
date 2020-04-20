@@ -1,39 +1,62 @@
 package ma.negpm.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
+@Table(name = "Me_User", //
+		uniqueConstraints = { //
+				@UniqueConstraint(name = "ME_USER_UK", columnNames = "User_Name") })
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long id;
+	@GeneratedValue
+	@Column(name = "User_Id", nullable = false)
+	private Long userId;
 
-	private String login;
+	@Column(name = "User_Name", length = 36, nullable = false)
+	private String userName;
 
-	private String password;
+	@Column(name = "Encryted_Password", length = 128, nullable = false)
+	private String encrytedPassword;
 
-	protected User() {
+	@Column(name = "Enabled", length = 1, nullable = false)
+	private boolean enabled;
+
+	public Long getUserId() {
+		return userId;
 	}
 
-	public User(String login, String password) {
-		this.login = login;
-		this.password = password;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
-	public long getId() {
-		return id;
+	public String getUserName() {
+		return userName;
 	}
 
-	public String getLogin() {
-		return login;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getEncrytedPassword() {
+		return encrytedPassword;
+	}
+
+	public void setEncrytedPassword(String encrytedPassword) {
+		this.encrytedPassword = encrytedPassword;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 }
