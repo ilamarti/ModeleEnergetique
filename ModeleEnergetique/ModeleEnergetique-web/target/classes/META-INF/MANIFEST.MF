@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: ModeleEnergetique-web
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: DELL
+Built-By: Yassine
 Implementation-Vendor-Id: ma.negpm
-Build-Jdk: 1.8.0_192
+Build-Jdk: 1.8.0_241
 Implementation-URL: http://projects.spring.io/spring-boot/ModeleEnerge
  tique/ModeleEnergetique-web/
 Created-By: Maven Integration for Eclipse

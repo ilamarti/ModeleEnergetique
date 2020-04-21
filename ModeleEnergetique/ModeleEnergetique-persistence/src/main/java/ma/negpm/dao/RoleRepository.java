@@ -24,7 +24,7 @@ public class RoleRepository {
  
         Query query = this.entityManager.createQuery(sql, String.class);
         query.setParameter("userId", userId);
-        return query.getResultList();
+        return (List<String>)query.getResultList();
     }
  
 }
