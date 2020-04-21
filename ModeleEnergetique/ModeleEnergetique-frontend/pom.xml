@@ -39,6 +39,18 @@
 				<executions>
 
 					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+					</execution>
+					<execution>
 						<id>npm run build</id>
 						<goals>
 							<goal>npm</goal>
@@ -46,6 +58,16 @@
 						<configuration>
 							<arguments>run build</arguments>
 						</configuration>
+					</execution>
+					<execution>
+						<id>prod</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run-script build</arguments>
+						</configuration>
+						<phase>generate-resources</phase>
 					</execution>
 				</executions>
 			</plugin>
