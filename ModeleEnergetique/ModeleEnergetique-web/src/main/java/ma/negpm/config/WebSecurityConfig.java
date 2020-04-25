@@ -37,11 +37,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
+//		http.csrf().disable();
 
 		// The pages does not require login
-		http.authorizeRequests().antMatchers("/").permitAll();
-		http.authorizeRequests().antMatchers("/me").permitAll();
+//		http.authorizeRequests().antMatchers("/login").permitAll();
+//		http.authorizeRequests().antMatchers("/").permitAll();
+//		http.authorizeRequests().antMatchers("/me").permitAll();
+		
+		http
+        .authorizeRequests()
+            .anyRequest()
+            .fullyAuthenticated()
+            .and()
+        .formLogin()
+            .loginPage("/login")
+            .failureUrl("/login?error")
+            .permitAll()
+            .and()
+        .logout()
+            .logoutUrl("/logout")
+            .logoutSuccessUrl("/login?logout")
+            .permitAll()
+            .and()
+        .csrf();
 
 		// Config Remember Me.
 		http.authorizeRequests().and() //

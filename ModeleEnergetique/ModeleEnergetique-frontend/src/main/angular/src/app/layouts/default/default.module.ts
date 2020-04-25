@@ -4,12 +4,14 @@ import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/module/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
+import { LogInComponent} from 'src/app/components/log-in/log-in.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule} from '@angular/material/divider';
 import { MatCardModule} from '@angular/material/card';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
 
@@ -19,7 +21,8 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent
+    PostsComponent,
+    LogInComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +34,7 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
     FlexLayoutModule,
     MatPaginatorModule,
     MatTableModule,
+    MatFormFieldModule
 
   ],
   providers:[
