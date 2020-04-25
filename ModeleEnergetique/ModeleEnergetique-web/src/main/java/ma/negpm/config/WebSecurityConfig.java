@@ -41,6 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		// The pages does not require login
 		http.authorizeRequests().antMatchers("/").permitAll();
+		http.authorizeRequests().antMatchers("/me").permitAll();
 
 		// Config Remember Me.
 		http.authorizeRequests().and() //
