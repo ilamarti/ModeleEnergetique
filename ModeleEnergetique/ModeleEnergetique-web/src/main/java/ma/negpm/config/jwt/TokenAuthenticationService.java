@@ -1,20 +1,19 @@
 package ma.negpm.config.jwt;
 
-import java.util.Collections;
 import java.util.Date;
- 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
- 
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
  
 public class TokenAuthenticationService {
      
-    static final long EXPIRATIONTIME = 864_000_000; // 10 days
+    static final long EXPIRATIONTIME = 864000000; // 10 days
      
     static final String SECRET = "ThisIsASecret";
      
@@ -36,7 +35,7 @@ public class TokenAuthenticationService {
             String user = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token.replace(TOKEN_PREFIX, "")).getBody()
                     .getSubject();
  
-            return user != null ? new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList()) : null;
+            return user != null ? new UsernamePasswordAuthenticationToken(user, null) : null;
         }
         return null;
     }

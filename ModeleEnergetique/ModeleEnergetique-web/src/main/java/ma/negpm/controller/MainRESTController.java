@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainRESTController {
 
-	@RequestMapping("/me")
+	@RequestMapping("/")
 	@ResponseBody
 	public String welcome() {
 		return "Welcome to Spring Boot + REST + JWT Example.";
