@@ -16,11 +16,11 @@ const routes: Routes = [{
     path:'posts',
     component:PostsComponent
   }
-  ,{
-    path:'login',
-    component:LogInComponent
-  }
+  
   ]
+},{
+  path:'login',
+  component:LogInComponent
 }];
 
 @NgModule({
