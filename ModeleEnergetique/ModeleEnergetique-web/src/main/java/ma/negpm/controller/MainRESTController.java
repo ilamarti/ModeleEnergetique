@@ -1,16 +1,25 @@
 package ma.negpm.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping
 public class MainRESTController {
 
-	@RequestMapping("/")
+	@PostMapping("/me")
 	@ResponseBody
 	public String welcome() {
 		return "Welcome to Spring Boot + REST + JWT Example.";
 	}
-
+    
+//	@RequestMapping(value = "/{[path:[^\\.]*}")
+//    public String redirect() {
+//        return "forward:/index.html";
+//    }
+	
+	
 }
