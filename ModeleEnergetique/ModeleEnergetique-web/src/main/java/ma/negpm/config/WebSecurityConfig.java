@@ -39,32 +39,36 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 //		http.csrf().disable();
 
-		// The pages does not require login
-//		http.authorizeRequests().antMatchers("/login").permitAll();
+//		// The pages does not require login
+//		http.authorizeRequests().antMatchers("login").permitAll();
 //		http.authorizeRequests().antMatchers("/").permitAll();
 //		http.authorizeRequests().antMatchers("/me").permitAll();
-		
 		http
+        .httpBasic()
+      .and()
         .authorizeRequests()
-            .anyRequest()
-            .fullyAuthenticated()
-            .and()
-        .formLogin()
-            .loginPage("/login")
-            .failureUrl("/login?error")
-            .permitAll()
-            .and()
-        .logout()
-            .logoutUrl("/logout")
-            .logoutSuccessUrl("/login?logout")
-            .permitAll()
-            .and()
-        .csrf();
+          .antMatchers( "/", "/posts", "/login").permitAll();
+//		http
+//        .authorizeRequests()
+//            .anyRequest()
+//            .fullyAuthenticated()
+//            .and()
+//        .formLogin()
+//            .loginPage("/login")
+//            .failureUrl("/login?error")
+//            .permitAll()
+//            .and()
+//        .logout()
+//            .logoutUrl("/logout")
+//            .logoutSuccessUrl("/login?logout")
+//            .permitAll()
+//            .and()
+//        .csrf();
 
 		// Config Remember Me.
-		http.authorizeRequests().and() //
-				.rememberMe().tokenRepository(this.persistentTokenRepository()) //
-				.tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
+//		http.authorizeRequests().and() //
+//				.rememberMe().tokenRepository(this.persistentTokenRepository()) //
+//				.tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
 	}
 
 	@Bean
