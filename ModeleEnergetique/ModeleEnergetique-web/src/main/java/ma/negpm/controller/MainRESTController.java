@@ -16,10 +16,6 @@ public class MainRESTController {
 		return "Welcome to Spring Boot + REST + JWT Example.";
 	}
     
-//	@RequestMapping(value = "/{[path:[^\\.]*}")
-//    public String redirect() {
-//        return "forward:/index.html";
-//    }
 	
 	
 }
